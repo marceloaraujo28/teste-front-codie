@@ -9,8 +9,8 @@ export const HomeContainer = styled.main`
   overflow: hidden;
 
   .background-image {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     z-index: -1;
   }
