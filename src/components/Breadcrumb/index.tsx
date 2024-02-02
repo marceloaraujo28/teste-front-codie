@@ -6,7 +6,7 @@ import {
   PageTitle,
   Space,
   Text,
-} from "./style";
+} from "./styles";
 import { BreadcrumbProps } from "./types";
 
 export default function Breadcrumb({ page, link }: BreadcrumbProps) {
