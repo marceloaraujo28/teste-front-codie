@@ -1,15 +1,15 @@
-import { Button } from "../Button";
-import { MenuContainer } from "./style";
+import { ButtonLink } from "../Button";
+import { MenuContainer } from "./styles";
 
 export default function Menu() {
   return (
     <MenuContainer>
-      <Button link="/about" hasBackground={false} textColor="#000">
+      <ButtonLink link="/about" hasBackground={false} textColor="#000">
         Quem somos
-      </Button>
-      <Button link="/about" hasBackground textColor="#fff">
+      </ButtonLink>
+      <ButtonLink link="/scheduling" hasBackground textColor="#fff">
         Agendar Consulta
-      </Button>
+      </ButtonLink>
     </MenuContainer>
   );
 }

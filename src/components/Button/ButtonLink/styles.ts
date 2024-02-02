@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ButtonWrapper = styled.button<{
+export const ButtonLinkWrapper = styled.button<{
   $hasBackground?: boolean;
   $textColor: string;
 }>`
@@ -12,4 +12,5 @@ export const ButtonWrapper = styled.button<{
   cursor: pointer;
   color: ${({ $textColor }) => $textColor};
   padding: ${({ $hasBackground }) => ($hasBackground ? "13px 24px" : 0)};
+  font-size: 14px;
 `;
