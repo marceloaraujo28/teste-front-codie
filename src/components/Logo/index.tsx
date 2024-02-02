@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { LogoContainer, TextLogo } from "./style";
+import { LogoContainer, TextLogo } from "./styles";
 import LogoImage from "@/public/images/white-pokeball.svg";
 
 export default function Logo() {
