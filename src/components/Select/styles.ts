@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 export const SelectContainer = styled.div<{
-  side: "top" | "left";
+  $side: "top" | "left";
 }>`
   display: flex;
-  width: ${({ side }) => (side === "top" ? "265px" : "auto")};
-  flex-direction: ${({ side }) => (side === "top" ? "column" : "row")};
-  gap: ${({ side }) => (side === "top" ? "8px" : "38px")};
-  align-items: ${({ side }) => (side === "top" ? "flex-start" : "center")};
+  width: ${({ $side }) => ($side === "top" ? "265px" : "auto")};
+  flex-direction: ${({ $side }) => ($side === "top" ? "column" : "row")};
+  gap: ${({ $side }) => ($side === "top" ? "8px" : "38px")};
+  align-items: ${({ $side }) => ($side === "top" ? "flex-start" : "center")};
 `;
-//8px;
 export const SelectName = styled.span`
   font-weight: 700;
   font-size: 12px;
@@ -25,4 +24,10 @@ export const SelectBox = styled.select`
   font-size: 14px;
   font-weight: 500;
   color: #747474;
+`;
+
+export const ErrorMessage = styled.span`
+  color: #e40f0f;
+  font-size: 10px;
+  font-weight: 700;
 `;
