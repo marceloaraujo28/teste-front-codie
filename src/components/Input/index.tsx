@@ -1,11 +1,18 @@
-import { InputContainer, InputName, InputBox } from "./styles";
+import React from "react";
+import { InputContainer, InputName, InputBox, ErrorMessage } from "./styles";
 import { InputProps } from "./types";
 
-export default function Input({ labelName, ...props }: InputProps) {
+function Input(
+  { labelName, errorMessage, ...props }: InputProps,
+  ref: React.Ref<HTMLInputElement>
+) {
   return (
     <InputContainer>
       <InputName>{labelName}</InputName>
-      <InputBox {...props} />
+      <InputBox ref={ref} {...props} />
+      <ErrorMessage>{errorMessage}</ErrorMessage>
     </InputContainer>
   );
 }
+
+export default React.forwardRef(Input);

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SchedulingContainer = styled.div`
+export const SchedulingContainer = styled.main`
   display: flex;
   flex-direction: column;
   margin-bottom: 32px;
@@ -15,7 +15,7 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
-export const FormContainer = styled.main`
+export const FormContainer = styled.form`
   margin-top: 32px;
   display: flex;
   flex-direction: column;

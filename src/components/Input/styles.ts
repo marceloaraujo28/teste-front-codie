@@ -22,3 +22,9 @@ export const InputBox = styled.input`
   font-weight: 500;
   color: #747474;
 `;
+
+export const ErrorMessage = styled.span`
+  color: #e40f0f;
+  font-size: 10px;
+  font-weight: 700;
+`;

@@ -6,18 +6,31 @@ export function ButtonLink({
   children,
   hasBackground,
   textColor,
-  link,
+  link = "",
+  type,
   ...props
 }: ButtonProps) {
   return (
-    <Link href={link}>
-      <ButtonLinkWrapper
-        $hasBackground={hasBackground}
-        $textColor={textColor}
-        {...props}
-      >
-        {children}
-      </ButtonLinkWrapper>
-    </Link>
+    <>
+      {type === "submit" ? (
+        <ButtonLinkWrapper
+          $hasBackground={hasBackground}
+          $textColor={textColor}
+          {...props}
+        >
+          {children}
+        </ButtonLinkWrapper>
+      ) : (
+        <Link href={link}>
+          <ButtonLinkWrapper
+            $hasBackground={hasBackground}
+            $textColor={textColor}
+            {...props}
+          >
+            {children}
+          </ButtonLinkWrapper>
+        </Link>
+      )}
+    </>
   );
 }
