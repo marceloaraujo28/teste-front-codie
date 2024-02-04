@@ -23,6 +23,13 @@ import {
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
+import { useGetAllPokemons } from "@/src/api/hooks/useGetAllPokemons";
+import { useGetAllRegions } from "@/src/api/hooks/useGetAllRegions";
+import { useGetLocations } from "@/src/api/hooks/useGetLocations";
+
+import { QueryClient, dehydrate } from "react-query";
+import axios from "axios";
+
 interface IForm {
   name: string;
   surname: string;
@@ -34,16 +41,25 @@ interface IForm {
 }
 
 export default function Scheduling() {
+  const { regions: regionsData } = useGetAllRegions();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    watch,
   } = useForm<IForm>({
     resolver: yupResolver(formValidation),
   });
 
-  const onSubmit: SubmitHandler<IForm> = (data) => console.log("TESTE");
+  const cityUrl = watch("city");
+
+  const { pokemons } = useGetAllPokemons(cityUrl);
+
+  const region = watch("region");
+  const { locations } = useGetLocations(region);
+
+  const onSubmit: SubmitHandler<IForm> = (data) => {};
 
   return (
     <SchedulingContainer>
@@ -77,7 +93,15 @@ export default function Scheduling() {
               <option value="" disabled hidden>
                 Escolha uma região
               </option>
-              <option value="Marcelo">Marcelo</option>
+              {regionsData &&
+                regionsData?.length > 0 &&
+                regionsData?.map((region) => {
+                  return (
+                    <option key={region} value={region}>
+                      {region}
+                    </option>
+                  );
+                })}
             </Select>
             <Select
               labelName="Cidade"
@@ -88,7 +112,15 @@ export default function Scheduling() {
               <option value="" disabled hidden>
                 Selecione sua cidade
               </option>
-              <option value="Marcelo">Marcelo</option>
+              {locations &&
+                locations?.length > 0 &&
+                locations?.map((location, index) => {
+                  return (
+                    <option key={`${location}+${index}`} value={location}>
+                      {location}
+                    </option>
+                  );
+                })}
             </Select>
           </InputZone>
         </TopForm>
@@ -109,7 +141,10 @@ export default function Scheduling() {
             <option value="" disabled hidden>
               Selecione seu pokémon
             </option>
-            <option value="Marcelo">Marcelo</option>
+            {pokemons.length > 0 &&
+              pokemons.map((poke) => {
+                return <option key={poke}>{poke}</option>;
+              })}
           </Select>
           <ButtonAdd>Adicionar novo pokémon ao time...</ButtonAdd>
           <InputZone>
@@ -156,4 +191,20 @@ export default function Scheduling() {
       </FormContainer>
     </SchedulingContainer>
   );
+}
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery(["getAllRegionsKey"], async () => {
+    await axios
+      .get("https://pokeapi.co/api/v2/region")
+      .then((response) => response.data);
+  });
+
+  return {
+    props: {
+      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+    },
+  };
 }
