@@ -10,6 +10,7 @@ export default function Home() {
         src={backgroundHome}
         className="background-image"
         alt="Imagem de fundo"
+        priority
       />
       <TextOverlay>
         <p>
