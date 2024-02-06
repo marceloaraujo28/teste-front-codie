@@ -22,7 +22,7 @@ export const TextOverlay = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
-  font-size: 32px;
+  color: ${(props) => props.theme.colors.white};
+  font-size: ${(props) => props.theme.fontSize.l};
   font-weight: 700;
 `;

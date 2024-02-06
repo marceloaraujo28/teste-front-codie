@@ -5,10 +5,10 @@ export const FooterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1d1d1d;
+  background-color: ${(props) => props.theme.colors.gray400};
 `;
 
 export const FooterText = styled.p`
-  color: #fff;
-  font-size: 14px;
+  color: ${(props) => props.theme.colors.white};
+  font-size: ${(props) => props.theme.fontSize.m};
 `;

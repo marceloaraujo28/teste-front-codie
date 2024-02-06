@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LogoContainer = styled.div`
   height: 61px;
   border-radius: 50px;
-  background-color: #e40f0f;
+  background-color: ${(props) => props.theme.colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const TextLogo = styled.span`
-  color: white;
+  color: ${(props) => props.theme.colors.white};
   font-weight: 600;
   font-size: 20px;
 `;
