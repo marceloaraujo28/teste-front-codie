@@ -1,5 +1,7 @@
 import axios from "axios";
 import { IPokemonClient } from "./PokemonClientInterface";
+import { injectable } from "inversify";
+import "reflect-metadata";
 import {
   IGetAllRegions,
   IGetInfoArea,
@@ -7,6 +9,7 @@ import {
   IGetInfoRegion,
 } from "../types";
 
+@injectable()
 export class PokemonClient implements IPokemonClient {
   private baseUrl = "https://pokeapi.co/api/v2";
 

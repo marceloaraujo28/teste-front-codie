@@ -6,9 +6,15 @@ import {
   IGetInfoRegion,
 } from "../types";
 import { UseQuery } from "../useQuery";
-
+import { injectable } from "inversify";
+import "reflect-metadata";
+@injectable()
 export class PokemonService {
-  private pokemonClient = new PokemonClient();
+  private readonly pokemonClient: PokemonClient;
+
+  constructor(pokemonClient: PokemonClient) {
+    this.pokemonClient = pokemonClient;
+  }
 
   getInfoCity(city: string) {
     return UseQuery<IGetInfoCity>({
