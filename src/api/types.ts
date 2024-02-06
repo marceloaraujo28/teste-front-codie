@@ -34,4 +34,7 @@ export interface IGetInfoArea {
 
 export interface IGetInfoRegion {
   locations: LocationsType[];
+  main_generation: {
+    url: string;
+  };
 }
