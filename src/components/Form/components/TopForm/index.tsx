@@ -7,6 +7,7 @@ import { useGetLocations } from "@/src/api/hooks/useGetLocations";
 
 export default function TopForm({ errors, register, region }: TopFormProps) {
   const { regions: regionsData } = useGetAllRegions();
+
   const { locations } = useGetLocations(region);
 
   return (

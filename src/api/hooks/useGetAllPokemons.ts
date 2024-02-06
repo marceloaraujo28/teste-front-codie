@@ -1,8 +1,9 @@
-import { PokemonService } from "../service/PokemonService";
 import { UseGetAllPokemonsResult } from "./types";
+import { container } from "@/src/config.ts/inversify.config";
+import { PokemonService } from "../service/PokemonService";
 
 export function useGetAllPokemons(city: string): UseGetAllPokemonsResult {
-  const pokemonService = new PokemonService();
+  const pokemonService = container.get<PokemonService>(PokemonService);
 
   const { data: CityData } = pokemonService.getInfoCity(city);
 
