@@ -1,94 +1,43 @@
-# CODIE
+<h1 align="center">Codie Challenge</h1>
 
-<details>
-  <summary>
-    <strong>🤷🏽‍♀️ Como entregar</strong>
-  </summary><br>
+<br>
 
-- **Envie o repositório do projeto concluído para este linkedin:** [Fernando-Codie](https://www.linkedin.com/in/fernando-maziero/)
+<img src="/public/home.png" alt="" />
 
-</details>
+## :dart: About
 
-# Orientações
+My project involved creating a website that integrates a form with the Pokémon API to fetch dynamic data. I adopted TypeScript for secure typing and enhanced productivity, while Styled Components were used for dynamic and component-oriented styling. For form construction and validation, I integrated React Hook Form with Yup, providing a smooth and intuitive user experience. React Query was employed for asynchronous state management and data caching, ensuring optimized performance and user agility. Additionally, I implemented Object-Oriented Programming (OOP) principles for an organized and scalable codebase, utilizing Inversify for dependency injection in TypeScript applications. Leveraging Next.js for Server-Side Rendering (SSR) facilitated fast initialization and improved SEO experience. This project served as an opportunity to explore and integrate various cutting-edge technologies, resulting in a dynamic, responsive, and easily maintainable application.
 
-<details>
-  <summary>
-    <strong>🛠 Ferramentas</strong>
-  </summary><br>
-  
- - [TypeScript](https://www.typescriptlang.org/)
- - [Yup](https://www.npmjs.com/package/yup?activeTab=readme)
- - [PNPM](https://pnpm.io/installation)
- - [ReactJS](https://react.dev/)
- - [Axios](https://axios-http.com/docs/intro)
- - [NextJS](https://nextjs.org/)
- - [Swiper](https://swiperjs.com/demos)
- - [Dotenv](https://www.npmjs.com/package/dotenv)
- - [Toastify](https://www.npmjs.com/package/react-toastify)
- - [React-Hook-Form](https://react-hook-form.com/)
- - [Styled-Components](https://styled-components.com/)
+## :rocket: Technologies
 
-</details>
- 
-Teste técnico para desenvolvimento frontend – React/NextJS.
+The following tools were used in this project:
 
-## Setup
+- [NextJs](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup](https://reactrouter.com/en/main)
+- [React query](https://tanstack.com/query/latest)
+- [Inversify](https://inversify.io/)
 
-Instale as dependências do código com pnpm
+## :white_check_mark: Requirements
 
-## Inicie o projeto
-```shell
-pnpm run dev
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
+## :checkered_flag: Starting
+
+```bash
+# Clone this project
+$ git clone https://github.com/marceloaraujo28/teste-front-codie
+
+# Access
+$ cd teste-front-codie
+
+# Install dependencies
+$ pnpm install
+
+# Run the project
+$ pnpm run dev
+
+# The project will initialize in the <http://localhost:3000>
 ```
-
-## Objetivo
-
-Desenvolver um web app em Typescript, a partir deste projeto nextjs (clone o repositório e desenvolva em cima dele), que implemente o design descrito na próxima seção.
-
-### Requisitos
-- Tratar possíveis erros de API
-- Demonstrar conhecimento do uso de hooks
-- Criar um código desacoplado, organizado e testável
-- Demonstrar conhecimento de modularização de componentes
-- Utilizar CSS in js – styled components para estilizar as páginas
-- Demonstrar conhecimento de TypeScript e suas features para organizar o projeto
-- Obrigatório o uso do react-hook-form + yup para o desenvolvimento do formulário
-- Deve ser usado Page Router do next.js e não a nova versão >=14.0.0 no desenvolvimento deste projeto.
-- Demonstrar organização, desacoplamento e separação de responsabilidades no código; obrigatório o uso de inversify + clean architecture
-
-### Diferencial
-- Demonstrar conhecimentos de técnicas específicas de NextJS para lidar com estilos e server-side rendering.
-- Demonstrar em pelo menos 1 chamada de api o uso de SSR Next.js
-- Demonstrar conhecimento com react-query.
-- Demonstrar conhecimento em classes javascript POO.
-
-### Uso de APIs
-- Usar `http://localhost:3000/api/scheduling/date` para puxar as datas disponíveis para agendamento
-- Usar `htttp://localhost:3000/api/scheduling/time` para puxar os horários disponíveis para agendamento
-- Usar a [pokéAPI](https://pokeapi.co/) para trazer os dados de região, cidades, e pokémons a serem usados no agendamento
-
-Entender o contrato das APIs é também parte do teste.
-
-### Entrega
-O prazo para entrega é de **07 dias**.
-
-## Design a Ser Implementado
-O site deve implementar o design descrito nas telas abaixo. Todas as imagens necessárias estão na pasta `./public/images`.
-
-A fonte utilizada em todas as páginas, e inclusive no logo, é chamada `Inter` e está disponível no Google Fonts.
-
-Este figma pode ser utilizado para consulta: https://www.figma.com/file/TxK6YkULMRyMCf6158VYNx/CODIE-TESTE-FRONT-END?type=design&node-id=0-1&mode=design&t=0dzPE2mRNqKfLXIg-0
-
-### Home
-![home page](public/test-sample/Home.png)
-Obs: O logo deve seguir o seguinte comportamento, iniciando expandido na home, e reduzindo após 05 segundos, da direita para a esquerda. Ele deve estar na forma reduzida nas demais páginas, abrindo no hover do mouse:
-![](public/test-sample/logo-behavior.png)
-### Quem Somos
-![](public/test-sample/Quem%20Somos.png)
-### Agendar Consulta
-![](public/test-sample/Agendar%20Consulta.png)
-#### Caso de Sucesso
-![](public/test-sample/Agendar%20Consulta%20Sucesso.png)
-#### Caso de Falha
-![](public/test-sample/Agendar%20Consulta%20Falha.png)
