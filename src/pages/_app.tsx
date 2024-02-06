@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider, Hydrate } from "react-query";
 import Footer from "@/src/components/Footer";
 import Header from "@/src/components/Header";
 import React from "react";
+import { ThemeProvider } from "styled-components";
+import { defaultTheme } from "@/src/styles/theme/default";
 
 export default function App({ Component, pageProps }: AppProps) {
   const queryClient = React.useRef(new QueryClient());
@@ -13,12 +15,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient.current}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Container>
-          <GlobalStyle />
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </Container>
+        <ThemeProvider theme={defaultTheme}>
+          <Container>
+            <GlobalStyle />
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </Container>
+        </ThemeProvider>
       </Hydrate>
     </QueryClientProvider>
   );
