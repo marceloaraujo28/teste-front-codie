@@ -29,9 +29,9 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.h2`
   font-weight: 500;
-  font-size: 16px;
+  font-size: ${(props) => props.theme.fontSize.base};
 `;
 
 export const Text = styled.p`
-  font-size: 14px;
+  font-size: ${(props) => props.theme.fontSize.m};
 `;

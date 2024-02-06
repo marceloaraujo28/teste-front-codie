@@ -7,6 +7,6 @@ export const InfoContainer = styled.div`
 `;
 
 export const Value = styled.p`
-  font-size: 14px;
-  color: #747474;
+  font-size: ${(props) => props.theme.fontSize.m};
+  color: ${(props) => props.theme.colors.gray200};
 `;

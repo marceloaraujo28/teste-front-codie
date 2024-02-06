@@ -7,5 +7,5 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
   min-height: 104px;
   padding: 0 83px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.white};
 `;
