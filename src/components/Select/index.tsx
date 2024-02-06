@@ -1,4 +1,11 @@
-import { ErrorMessage, SelectBox, SelectContainer, SelectName } from "./styles";
+import {
+  ErrorMessage,
+  SelectBox,
+  SelectContainer,
+  SelectLeftContainer,
+  SelectLeftNameandInput,
+  SelectName,
+} from "./styles";
 import { SelectProps } from "./types";
 import React from "react";
 
@@ -15,12 +22,29 @@ function Select(
   return (
     <>
       <SelectContainer $side={labelSide}>
-        <SelectName>{labelName}</SelectName>
-        <SelectBox ref={ref} {...props}>
-          {children}
-        </SelectBox>
+        {labelSide === "top" ? (
+          <React.Fragment>
+            <SelectName>{labelName}</SelectName>
+            <SelectBox ref={ref} {...props}>
+              {children}
+            </SelectBox>
 
-        <ErrorMessage>{errorMessage}</ErrorMessage>
+            <ErrorMessage>{errorMessage}</ErrorMessage>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <SelectLeftContainer>
+              <SelectLeftNameandInput>
+                <SelectName>{labelName}</SelectName>
+                <SelectBox ref={ref} {...props}>
+                  {children}
+                </SelectBox>
+              </SelectLeftNameandInput>
+
+              <ErrorMessage>{errorMessage}</ErrorMessage>
+            </SelectLeftContainer>
+          </React.Fragment>
+        )}
       </SelectContainer>
     </>
   );

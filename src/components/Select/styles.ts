@@ -11,23 +11,38 @@ export const SelectContainer = styled.div<{
 `;
 export const SelectName = styled.span`
   font-weight: 700;
-  font-size: 12px;
+  font-size: ${(props) => props.theme.fontSize.mm};
+`;
+
+export const SelectLeftContainer = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: ${(props) => props.theme.fontSize.s};
+`;
+
+export const SelectLeftNameandInput = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 38px;
 `;
 
 export const SelectBox = styled.select`
   width: 100%;
   height: 45px;
-  border-radius: 8px;
-  border: 1px solid #d5d5d5;
+  border-radius: ${(props) => props.theme.fontSize.s};
+  border: 1px solid ${(props) => props.theme.colors.gray300};
   outline: none;
-  padding-left: 14px;
-  font-size: 14px;
+  padding-left: ${(props) => props.theme.fontSize.m};
+  font-size: ${(props) => props.theme.fontSize.m};
   font-weight: 500;
-  color: #747474;
+  color: ${(props) => props.theme.colors.gray200};
 `;
 
 export const ErrorMessage = styled.span`
-  color: #e40f0f;
+  color: ${(props) => props.theme.colors.primary};
   font-size: 10px;
   font-weight: 700;
+  text-align: right;
 `;
